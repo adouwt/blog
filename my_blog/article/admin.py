@@ -2,6 +2,7 @@ from django.contrib import admin
 from article.models import Category, Tag
 from article.models import Blog, Comment
 
+
 class CategoryAdmin(admin.ModelAdmin):
 	list_display = ('name',)
 
@@ -15,12 +16,13 @@ class BlogAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-	list_display = ('blog', 'name', 'email', 'created',) 
+	list_display = ('blog', 'comment_user', 'create_time',) 
 
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Comment, CommentAdmin)
+
 
 
